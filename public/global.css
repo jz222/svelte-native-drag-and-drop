@@ -13,6 +13,49 @@ body {
 body {
     margin: 0;
     padding: 0;
-    background: #f6f6f6;
+    background-color: white;
     color: #333;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+section {
+    width: 100%;
+    max-width: 900px;
+    min-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.dndArea {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dndArea >div {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed #dfe8fb;
+}
+
+.draggableItem {
+    margin: 0 5px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background-color: #dfe8fb;
+    font-size: 14px;
+    color: #447ae5;
+    cursor: pointer;
+}
+
+.draggableItem:focus {
+    background-color: red;
 }
