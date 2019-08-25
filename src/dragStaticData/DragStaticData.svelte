@@ -5,12 +5,7 @@
         e.dataTransfer.setData('text/plain', 'This message comes from the dragged element.');
     };
 
-    const dragOverHandler = (e) => {
-        e.preventDefault();
-    };
-
     const dropHandler = (e) => {
-        e.preventDefault();
         console.log('Dropped element in drop area.');
 
         const data = e.dataTransfer.getData('text/plain');
@@ -34,7 +29,7 @@
             </div>
         </div>
 
-        <div on:drop="{dropHandler}" on:dragover="{dragOverHandler}">
+        <div on:drop|preventDefault="{dropHandler}" on:dragover|preventDefault>
             Drop here
         </div>
     </div>

@@ -7,13 +7,11 @@
         console.log('Drag started.');
     };
 
-    const dragOverHandler = (e) => {
-        e.preventDefault();
+    const dragOverHandler = () => {
         console.log('Dragged element entered drop area.');
     };
 
-    const dropHandler = (e) => {
-        e.preventDefault();
+    const dropHandler = () => {
         console.log('Dropped element in drop area.');
 
         alert('Element dropped in drop area.');
@@ -35,7 +33,7 @@
             </div>
         </div>
 
-        <div on:drop="{dropHandler}" on:dragover="{dragOverHandler}">
+        <div on:drop|preventDefault="{dropHandler}" on:dragover|preventDefault="{dragOverHandler}">
             Drop here
         </div>
     </div>

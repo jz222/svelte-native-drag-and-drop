@@ -3,13 +3,8 @@
 
     const dragStartHandler = (e, id) => e.dataTransfer.setData('text/plain', id);
 
-    const dragOverHandler = (e) => e.preventDefault();
-
     const dropHandler = (e) => {
-        e.preventDefault();
-
         const userId = e.dataTransfer.getData('text/plain');
-
         droppedUser = users.find(x => x.id === +userId);
     };
 
@@ -38,7 +33,7 @@
             {/each}
         </div>
 
-        <div on:drop="{dropHandler}" on:dragover="{dragOverHandler}">
+        <div on:drop|preventDefault="{dropHandler}" on:dragover|preventDefault>
             {#if droppedUser}
                 <ul>
                     <li><b>First Name:</b> {droppedUser.firstName || 'Not available'}</li>
